@@ -8,7 +8,7 @@ module.exports = {
     },
     notAjax: (url, callback) => {
         setTimeout(() => {
-            callback('this is a response from the server');
-        }, 2000);
+            callback(url);
+        }, 1000);
     }
 }
