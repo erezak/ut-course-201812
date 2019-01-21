@@ -5,5 +5,10 @@ module.exports = {
     },
     logger: (message) => {
         console.log('DEBUG: ' + message);
+    },
+    notAjax: (url, callback) => {
+        setTimeout(() => {
+            callback('this is a response from the server');
+        }, 2000);
     }
 }
