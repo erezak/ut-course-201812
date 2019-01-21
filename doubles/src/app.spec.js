@@ -1,13 +1,21 @@
 const expect = require('chai').expect;
-const indexPage = require('./app');
+const app = require('./app');
 
-describe("getIndexPage", function() {
-  it("should return index page", function() {
-    let req = {}
-    let res = {
-      send: function() {}
-    }
+describe('sinon', () => {
+    describe('logger', () => {
+        it ('should log to the console', () => {
+            app.logger('this is my test');
+        });
+    });
 
-    indexPage.getHelloWorld(req, res)
-  });
+    describe('getIndexPage', function() {
+        it('should return index page', function() {
+            let req = {}
+            let res = {
+            send: function() {}
+            }
+
+            app.getHelloWorld(req, res)
+        });
+    });
 });
